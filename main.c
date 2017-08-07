@@ -44,6 +44,6 @@ atv3(){
     gets("%d",N2);
     printf("\n Insira o primeiro numero\n");
     gets("%d",N3);
-    printf("\n (N1)");
+    printf("\n");
 }
 
