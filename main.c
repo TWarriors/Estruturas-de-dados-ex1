@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+//void atv1
+//void atv2
 
 atv1(){
     int C, F;
@@ -33,5 +35,15 @@ main() {
             break;
         }
     }
+}
+atv3(){
+    double N1, N2, N3;
+    printf("\n Insira o primeiro numero\n");
+    gets("%d",N1);
+    printf("\n Insira o primeiro numero\n");
+    gets("%d",N2);
+    printf("\n Insira o primeiro numero\n");
+    gets("%d",N3);
+    printf("\n (N1)");
 }
 
