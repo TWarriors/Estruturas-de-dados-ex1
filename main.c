@@ -27,6 +27,9 @@ main() {
         printf("Seleciona a atividade:\n");
         scanf("%i", &atv);
         switch(atv){
+            case 0:
+                exit(0);
+            break;
             case 1:
                 atv1();
             break;
@@ -42,6 +45,7 @@ main() {
         }
     }
 }
+
 atv3(){
     int N1, N2;
     double N3, R1=0, R2=0, R3=0;
