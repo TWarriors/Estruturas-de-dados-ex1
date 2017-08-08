@@ -58,8 +58,16 @@ atv3(){
     R1 = ((N1*2)*(N2/2));
     R2 = ((N1*3) + N3);
     R3 = (N3*N3*N3);
-    printf("\n A:%lf B:%lf C:%lf",R1, R2, R3 );
+    printf("\n A:%i B:%i C:%lf",R1, R2, R3 );
 }
 atv4(){
-    int 
+    //20cv-1500/5cv-600/1cv-300
+    //motores por maquina: 1=20cv 3=5cv 2=1cv
+    int m1 = 1, m2 = 3, m3 = 2;
+    
+    printf("\n Digite quantas maquinas serão usadas:");
+    printf("%i",%);
+    v1 = v1*m1 + v1*m2 + v1*m3;
+    printf("\n Motor 1:%i \n Motor 2:%i \n Motor 3:%i",m1, m2, m3);
+    
 }
