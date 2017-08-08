@@ -27,6 +27,9 @@ main() {
         printf("Seleciona a atividade:\n");
         scanf("%i", &atv);
         switch(atv){
+            case 0:
+                exit(0);
+            break;
             case 1:
                 atv1();
             break;
@@ -36,6 +39,7 @@ main() {
         }
     }
 }
+
 atv3(){
     double N1, N2, N3, R1, R2, R3;
     printf("\n Insira o primeiro numero\n");
