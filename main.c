@@ -63,11 +63,18 @@ atv3(){
 atv4(){
     //20cv-1500/5cv-600/1cv-300
     //motores por maquina: 1=20cv 3=5cv 2=1cv
+    int cm1 = 1500, cm2 = 600, cm3 = 300;
     int m1 = 1, m2 = 3, m3 = 2;
-    
+    int qm1 ,qm2, qm3;
+    int ctm, qm;
     printf("\n Digite quantas maquinas serão usadas:");
-    printf("%i",%);
-    v1 = v1*m1 + v1*m2 + v1*m3;
-    printf("\n Motor 1:%i \n Motor 2:%i \n Motor 3:%i",m1, m2, m3);
+    printf("%i",&qm);
+    qm1 = qm*m1;
+    qm2 = qm*m2;
+    qm3 = qm*m3;
+    printf("\n Motor 1:%i \n Motor 2:%i \n Motor 3:%i",qm1, qm2, qm3);
+    ctm = (((qm*qm1)*cm1)+((qm*qm2)*cm2)+((qm*qm3)*cm3));
+        
+    
     
 }
