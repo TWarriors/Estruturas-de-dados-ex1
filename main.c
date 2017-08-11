@@ -80,6 +80,41 @@ atv4(){
     ctm = (cm1+(m2*cm2)+(m3*cm3));
     printf("\n Custo parcial do motor:%i \n Custo total da compra:%i \n Custo por tipo de motor: 20CV:%i \n 5CV:%i \n 1CV:%i \n", ctm, ctc, ctp1, ctp2, ctp3); 
 }
+atv5(){
+    float altura, largura;
+    printf("Informe a altura: ");
+    scanf("%f", &altura);
+    printf("Informe a largura: ");
+    scanf("%f", &largura);	
+    		
+    float metroQua = (altura * largura);
+    float qtdTintaMetro = (metroQua * 3);
+    float qtdTintaLata = (qtdTintaMetro / 3.6);
+    
+    printf("A quatidade necessária de latas de tinta é: %.1f", qtdTintaLata);
+}
+atv6(){
+    char letra;
+    printf("Informe uma letra:\nF - Feminino\nM - Masculino\n");
+    scanf("%c", &letra);
+    switch (letra){
+        case 'F':
+             printf("\nFeminino.");
+             break;
+        case 'f':
+             printf("\nFeminino.");
+             break;             
+        case 'M':
+             printf("\nMasculino.");
+             break;
+        case 'm':
+             printf("\nMasculino.");
+             break;                            
+        default:
+             printf("\nSexo inválido.");
+	
+    }
+}
 atv7(){
     int nm1, nm2, nm3, nmm, nmn;
     printf("\n Digite o primeiro numero\n");
@@ -104,4 +139,153 @@ atv7(){
             nmn = nm1
         }
 }
-
+atv8(){
+    float resultado, num1, num2;	
+    int operacao;
+	
+    printf("Inserir valor: ");
+    scanf("%f", &num1);
+    printf("Inserir valor: ");
+    scanf("%f", &num2);	
+    do {			
+	printf("\n[ 1 ] - Adicao \n[ 2 ] - Subtracao \n[ 3 ] - Multiplicacao \n[ 4 ] - Divisao \n[ 5 ] - Fim \n\nDigite o comando para calculo: ");
+	scanf("%i", &operacao);
+	
+	fflush(stdin);
+    	switch (operacao){
+            case 1:
+                resultado = num1 + num2;
+                printf("\n%.2f + %.2f = %.2f\n\n",num1, num2, resultado);
+            break;
+            case 2:
+       		resultado = num1 - num2;
+             	printf("\n%.2f - %.2f = %.2f\n\n",num1, num2, resultado);
+            break;
+            case 3:
+        	resultado = num1 * num2;
+           	printf("\n%.2f * %.2f = %.2f\n\n",num1, num2, resultado);
+            break;        
+            case 4:
+		if(num1==0 || num2==0){
+                    printf("\nERRO - divisão com 0! \n\n");
+		}else{
+                    resultado = num1 / num2;
+             	printf("\n%.2f / %.2f = %.2f\n\n",num1, num2, resultado);
+		}
+            break;  
+            case 5:
+                    printf("\nSaindo do programa...\n\n");
+            break;   
+            default:
+                    printf("\nERRO - número inválido!\n\n");
+    	}
+    	
+	} while (operacao != 5);
+}
+atv9(){
+    char letra;
+    printf("Informe o turno que você estuda:\nM - Matutino\nV - Vespertino\nN - Noturno\n");
+    scanf("%c", &letra);
+    switch (letra){
+        case 'M':
+            printf("\nBom dia!");
+        break;
+        case 'm':
+            printf("\nBom dia!");
+        break;             
+        case 'V':
+            printf("\nBoa tarde!");
+        break;
+        case 'v':
+            printf("\nBoa tarde!");
+        break;
+        case 'N':
+            printf("\nBoa noite!");
+        break;     
+        case 'n':
+            printf("\nBoa noite!");
+        break;                                                  
+        default:
+            printf("\nTurno inválido.");
+    }
+}
+atv10(){
+    char letra;
+    printf("Informe um número: ");
+    scanf("%c", &letra);
+    switch (letra){
+        case '1':
+             printf("\nDomingo");
+        break;
+        case '2':
+             printf("\nSegunda-feira");
+        break;             
+        case '3':
+             printf("\nTerça-feira");
+        break;
+        case '4':
+             printf("\nQuarta-feira");
+        break;
+        case '5':
+             printf("\nQuinta-feira");
+        break;     
+        case '6':
+             printf("\nSexta-feira");
+        break;        
+        case '7':
+             printf("\nSábado");
+        break;                                                           
+        default:
+             printf("\nValor inválido.");
+    }
+}
+atv11(){
+    int i, nrInicial, nrFinal;		
+    printf("Informe o número inicial: ");
+    scanf("%i", &nrInicial);
+    printf("Informe o número final: ");
+    scanf("%i", &nrFinal);
+    for (i = nrInicial; i <= nrFinal; i++) {    
+            printf("%i", i);
+        }
+}
+atv12(){
+    int i, nrInicial, nrFinal, par, impar;
+    printf("Informe o número inicial: ");
+    scanf("%i", &nrInicial);
+    printf("Informe o número final: ");
+    scanf("%i", &nrFinal);   
+    for (i = nrInicial; i <= nrFinal; i++) {
+    if (i%2 == 0) {
+        par = i;                    
+        printf("\n%i", par);            
+        }        
+    }
+}
+atv13(){
+    int i, numero, maior, menor, diferenca;
+    for (i = 0; i < 10; i++) {
+    printf("Informe um número: ");
+    scanf("%i", &numero); 
+    if (numero > maior) {
+        maior = numero;
+        }
+        if (numero < menor) {
+           menor = numero;
+        }
+        diferenca = maior - menor; 
+        } 
+        printf("\nMaior número: %i\nMenor número: %i\nDiferença: %i", maior, menor, diferenca)
+}
+atv14(){
+	float quantNotas, media, notas, soma, i;
+	printf("Informe a quantidade de notas: ");
+    	scanf("%f", &quantNotas);
+        for (i = 0; i < quantNotas; i++) {
+            printf("Informe uma nota: ");
+    	    scanf("%f", &notas);
+            soma = soma + notas; 
+    	    media = (soma / quantNotas);
+        }
+        printf("Média bimestral: %.2f", media); 
+}
