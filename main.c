@@ -432,17 +432,280 @@ atv21(){
   	}
 
 
-int funcao (int numero){
-	      
+int funcao (int numero){      
 	if (numero % 2 == 0) {
          return 0;
- 
-      } else {
+      }else{
       	return 1;
-      	
-	  }    
-}
+	}    
+    }
 }
 atv22(){
+    int lado;
+    char letra;
+    printf("Informe um caractere: ");
+    scanf("%c", &letra);
+    printf("Informe a quantida de linhas: ");
+    scanf("%d", &lado);
+    desenhaQuadrado(letra, lado);
+    return 0;
 
+void desenhaQuadrado (char a, int b) {
+    int i, j;
+    for (i=0;i<b;i++) {
+        for (j=0;j<b;j++) {
+            printf("%c ", a);
+		}
+	printf("\n");
+	}
+    }
+}
+atv23(){
+    char opcao;
+    do {
+    printf("\nEscolha um cálculo\n");
+    printf("----------------------------------------------------\n");		
+    printf(	"[ a ] S = 1/1 + 3/2 + 5/3+........+ 99/50 \n");
+    printf("[ b ] S = 1/1 - 2/2 + 3/3 -..........- 10/10 \n");
+    printf( "[ c ] S = 1000/1 - 997/2 + 994/3.........\n");
+    printf("[ d ] S = 480/10 - 475/11 + 470/12 - .......\n");
+    printf("[ f ] FIM\n" );
+    printf("----------------------------------------------------\n");
+    scanf("%c", &opcao);
+    fflush(stdin);			
+					
+    switch(opcao){
+	case 'a':
+	case 'A':
+            opcaoA();
+	break;
+	case 'b':
+	case 'B':
+            opcaoB();
+	break;
+	case 'c':
+	case 'C':
+            opcaoC();
+	break;
+	case 'd':
+	case 'D':
+            opcaoD();
+	break;													
+	case 'f':
+	case 'F':
+            printf("Escolheu sair.\n");
+        break;		
+	default:
+            printf ("Alternativa inesperada.");
+            break;
+		}
+		
+	}while (opcao!='f' && opcao!='F');
+    int opcaoA (){
+        int i,j = 1;
+        for(i = 1; i <=50; i++){
+            printf("%d / %d\n",j,i);
+            j++;
+            j++;
+		}
+    }
+    int opcaoB (){
+    int i,j = 1;
+    for(i = 1; i <=10; i++){
+        printf("%d / %d\n",j,i);
+        j++;
+		}
+	}
+    int opcaoC (){
+	int i,j = 1000;
+	for(i = 1; i <=20; i++){
+            printf("%d / %d\n",j,i);
+            j--;
+            j--;
+            j--;
+		}		
+	}
+    int opcaoD (){
+        int i,j = 480;
+	for(i = 10; i <=30; i++){
+            printf("%d / %d\n",j,i);
+            j--;
+            j--;
+            j--;
+				j--;
+				j--;				
+		}
+	}
+}
+atv24(){
+    int A, B, C;
+    printf ("Lado AB: ");
+    scanf ("%i", &A);
+    printf ("Lado BC: ");
+    scanf ("%i", &B);
+    printf ("Lado CA: ");
+    scanf ("%i", &C);
+    if (identificador(A ,B ,C ) == 0){
+   	printf ("Equilátero");
+	} else if (identificador(A ,B ,C ) == 1){
+		printf ("Isóceles");
+	} else if (identificador(A ,B ,C ) == 2){
+        printf ("Escaleno");
+        }
+    return (0);
+
+int identificador (int a, int b, int c){
+    if (a != 0 && b != 0 && c != 0){
+	if (a != b && b!= c!=a) {
+            return 2;
+	} else if (a == b || b == c) {
+            return 0;
+	} else {
+            return 1;
+	}
+}
+}
+}
+atv25(){
+    int d,m,a;
+    setlocale(LC_ALL, "Portuguese");
+    printf("Digite a data (DD/MM/AAAA): ");
+    scanf("%i%*c%i%*c%i",&d,&m,&a);
+    printf("Data: %i/%i/%i\n",d,m,a);
+    if(ValidaData(d,m,a) == 0){
+    	ReajusteData(d,m,a);
+	} else {
+            printf("\nData inválida");
+	}
+}
+
+int ValidaData(int d, int m, int a){
+    int verific;
+    if (a >= 0 && !DiasValidosDoMes(d,m,a)){
+        if (m >= 1 && m <= 12) {
+            if (d >= 1 && d <= 31){
+              return 0;
+              }else{
+                  return 1;
+              }
+        }else{
+             return 1;
+        }
+    }else{
+        return 1;
+    } 
+}
+int AnoBissexto(int ano){
+    if ((ano % 400 == 0 ) || (ano % 4 == 0 && ano % 100 != 0) ){
+        return 0;
+    } else{
+        return 1;
+    }  
+}
+
+int DiasValidosDoMes(int dias, int mes, int ano){
+	if ((mes == 1 || mes == 01) && dias > 31){
+		return 1;	
+	}
+	else if ((mes == 2 || mes == 02) && !AnoBissexto(ano) && dias > 29){
+		return 1;	
+	}
+	else if ((mes == 2 || mes == 02) && AnoBissexto(ano) && dias > 28){
+		return 1;	
+	}	
+	else if ((mes == 3 || mes == 03) && dias > 31){
+		return 1;	
+	}
+	else if ((mes == 4 || mes == 04) && dias > 30){
+		return 1;	
+	}
+	if ((mes == 5 || mes == 05) && dias > 31){
+		return 1;	
+	}		
+	if ((mes == 6 || mes == 06) && dias > 30){
+		return 1;	
+	}
+	if ((mes == 7 || mes == 07) && dias > 31){
+		return 1;	
+	}
+	/* Não funciona com entrada 08 */
+	if ((mes == 8) && dias > 31){
+		return 1;	
+	}
+	/* Não funciona com entrada 09 */
+	if ((mes == 9) && dias > 30){
+		return 1;	
+	}
+	if ((mes == 10) && dias > 31){
+		return 1;	
+	}
+	if ((mes == 11) && dias > 30){
+		return 1;		
+	}
+	if ((mes == 12) && dias > 31){	
+	} else {						
+		return 0;
+	}
+}
+
+int ReajusteData (int dia, int mes, int ano){
+    int diaProxMes;
+	if ((mes == 1 || mes == 01) && dia > 26){
+            diaProxMes = (dia + 5) - 31;
+            mes++;
+            dia = diaProxMes;	
+		}else if ((mes == 2 || mes == 02) &&AnoBissexto(ano) == 1 && dia > 24){
+                    diaProxMes = (dia + 5) - 28;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 2 || mes == 02) && dia > 23){
+                    diaProxMes = (dia + 5) - 29;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 3 || mes == 03) && dia > 26){
+                    diaProxMes = (dia + 5) - 31;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 4 || mes == 04) && dia > 25){
+                    diaProxMes = (dia + 5) - 30;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 5 || mes == 05) && dia > 26){
+                    diaProxMes = (dia + 5) - 31;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 6 || mes == 06) && dia > 25){
+                    diaProxMes = (dia + 5) - 30;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 7 || mes == 07) && dia > 26){
+                    diaProxMes = (dia + 5) - 31;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 8) && dia > 26){
+                    diaProxMes = (dia + 5) - 31;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 9) && dia > 25){
+                    diaProxMes = (dia + 5) - 30;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 10) && dia > 26){
+                    diaProxMes = (dia + 5) - 31;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 11) && dia > 25){
+                    diaProxMes = (dia + 5) - 30;
+                    mes++;
+                    dia = diaProxMes;	
+		}else if ((mes == 12) && dia > 26){
+                    diaProxMes = (dia + 5) - 31;
+                    mes = 01;
+                    ano ++;
+                    dia = diaProxMes;	
+		}else{
+                    diaProxMes = (dia + 5);
+                    dia = diaProxMes;
+		}																				 		 
+	printf("\nReajuste de 5 dias para esta data:  %i/%i/%i\n",dia,mes,ano);	
 }
