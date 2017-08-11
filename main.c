@@ -289,3 +289,160 @@ atv14(){
         }
         printf("Média bimestral: %.2f", media); 
 }
+atv15(){
+    float quantTurmas, quantAlunos, media, soma, i;
+    printf("Informe a quantidade de turmas: ");
+    scanf("%f", &quantTurmas);
+    fflush(stdin);
+    for (i = 0; i < quantTurmas; i++) {
+        printf("Informe o número de alunos da turma: ");
+    	scanf("%f", &quantAlunos);
+        soma = soma + quantAlunos; 
+    	media = (soma / quantTurmas);
+        }
+        printf("Média de alunos por turma: %.2f", media);
+}
+atv16(){
+    int i, vet[5], soma = 0, multiplicacao=1;
+    for (i = 0; i < 5 ;i++){
+	printf("Informe um número: ");
+	scanf("%i", &vet[i]);
+    }for (i = 0; i < 5; i++){
+        soma = (soma + vet[i]); 
+	multiplicacao = (multiplicacao * vet[i]);       
+	}
+    printf("\nSoma: %i\nMultiplicação: %i", soma, multiplicacao);
+}
+atv17(){
+    int i=0, vet[10];
+	
+    for (i = 0; i < 10 ;i++){
+	printf("Informe um número: ");
+ 	scanf("%i", &vet[i]);
+	}
+    for (i = 9; i >= 0; i--) 	
+	printf("\n%i", vet[i]);
+}
+atv18(){
+    char vet[10];
+    int i, numVogal = 0, numConsoantes = 0;
+    for (i = 0; i < 10 ; i++){
+    printf("Informe um caractere: ");
+    scanf("%c", &vet[i]);
+    fflush(stdin); 
+    switch(vet[i]) {			
+	case 'a':
+        case 'A':
+        case 'e':
+	case 'E':
+	case 'i':
+	case 'I':
+	case 'o':
+	case 'O':
+	case 'u':
+	case 'U':	
+        numVogal++;
+	break;				                           
+        default:
+        numConsoantes = numConsoantes++;
+        break;
+    	}
+    }
+    printf("\nVogais: %i\nConsoantes: %i", numVogal, numConsoantes);
+}
+atv19(){
+    int t, i, matrizA[3][3], matrizB[3][3], matrizC[3][3], soma;
+    for (t = 0; t < 3; ++t){  
+        for (i = 0; i < 3; i++){           	
+            printf("Informe um numero:\n");		
+            scanf("%i",&matrizA[t][i]);	   
+	}
+}
+    for (t = 0; t < 3; ++t) {
+        for (i = 0; i < 3; ++i)
+            printf("%3i ", matrizA[t][i]);
+            printf("\n");
+    }
+    for (t = 0; t < 3; ++t){
+        for (i = 0; i < 3; i++){
+            printf("Informe um numero:\n");		
+            scanf("%i",&matrizB[t][i]);	 
+    }
+}
+    for (t = 0; t < 3; ++t) {
+        for (i = 0; i < 3; ++i)
+            printf("%3i ", matrizB[t][i]);
+            printf("\n");
+    }
+    for (t = 0; t < 3; t++) {	  
+	for (i = 0; i < 3; i++) {
+            soma = matrizA[t][i] + matrizB[t][i];
+            matrizC[t][i] = soma;
+			}
+ 		}
+    printf("\nMatriz 3");				
+    for (t = 0; t < 3; t++) {
+         for (i = 0; i < 3; i++)
+            printf("%3i ", matrizC[t][i]);
+            printf("\n");
+    }		
+    printf("\n");
+}
+atv20(){
+int i, j, k, matriz[4][4], matrizMult[4][4];
+printf("Informe o valor de k: ");
+scanf("%i", &k);
+for (i=0;i<4;i++){
+    for (j=0;j<4;j++){
+ 	matriz[i][j]=i+j*2+1;
+        }
+    }
+    for (i=0;i<4;i++){
+	for (j=0;j<4;j++){
+            printf("%i\t",matriz[i][j]);
+        }
+        printf("\n");
+    }  
+   	printf("\nValor k: %i\n",k);
+	for(i=0; i<4;i++){
+            for(j=0; j<4; j++){
+                matrizMult[i][j]=matriz[i][j];
+                    if(i==j){
+                        matrizMult[i][j] *= k;
+			}
+		}
+	}
+	for (i=0;i<4;i++){
+            for (j=0;j<4;j++){
+                printf("%i\t",matrizMult[i][j]);
+        }
+        printf("\n");
+    }
+}
+atv21(){
+    int numero;
+    printf("Informe um número: ");
+    scanf("%i", &numero);
+    fflush(stdin);
+    printf("%i", funcao(numero));	
+    if (funcao(numero)){
+        printf(" - Ímpar");
+    }else {
+        printf(" - Par");
+  	}
+
+
+int funcao (int numero){
+	      
+	if (numero % 2 == 0) {
+         return 0;
+ 
+      } else {
+      	return 1;
+      	
+	  }    
+}
+}
+atv22(){
+
+}
