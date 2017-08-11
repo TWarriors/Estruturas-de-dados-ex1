@@ -42,6 +42,69 @@ main() {
             case 4:
                 atv4();
             break;
+            case 5:
+                atv5();
+            break;
+            case 6:
+                atv6();
+            break;
+            case 7:
+                atv7();
+            break;
+            case 8:
+                atv8();
+            break;
+            case 9:
+                atv9();
+            break;
+            case 10:
+                atv10();
+            break;
+            case 11:
+                atv11();
+            break;
+            case 12:
+                atv12();
+            break;
+            case 13:
+                atv13();
+            break;
+            case 14:
+                atv14();
+            break;
+            case 15:
+                atv15();
+            break;
+            case 16:
+                atv16();
+            break;
+            case 17:
+                atv17();
+            break;
+            case 18:
+                atv18();
+            break;
+            case 19:
+                atv19();
+            break;
+            case 20:
+                atv20();
+            break;
+            case 21:
+                atv21();
+            break;
+            case 22:
+                atv22();
+            break;
+            case 23:
+                atv23();
+            break;
+            case 24:
+                atv24();
+            break;
+            case 25:
+                atv25();
+            break;
         }
     }
 }
@@ -628,11 +691,9 @@ int DiasValidosDoMes(int dias, int mes, int ano){
 	if ((mes == 7 || mes == 07) && dias > 31){
 		return 1;	
 	}
-	/* Não funciona com entrada 08 */
 	if ((mes == 8) && dias > 31){
 		return 1;	
 	}
-	/* Não funciona com entrada 09 */
 	if ((mes == 9) && dias > 30){
 		return 1;	
 	}
